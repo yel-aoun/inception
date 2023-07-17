@@ -44,8 +44,22 @@ services:
                - wp_data:/var/www/wordpress
       depends_on:
           - wordpress
+# volumes:
+#    wp_data:
+#    base_data:
+
 volumes:
-   wp_data:
-   base_data:
+  wp:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: /home/yel-aoun/data/wp_data/
+  base_data:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: /home/yel-aoun/data/base_data/
 networks:
   inception:
