@@ -49,7 +49,7 @@ services:
 #    base_data:
 
 volumes:
-  wp:
+  wp_data:
     driver: local
     driver_opts:
       o: bind
