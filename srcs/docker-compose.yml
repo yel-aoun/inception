@@ -26,12 +26,6 @@ services:
           -  ./.env
       volumes:
         - base_data:/var/lib/mysql
-      #environment:
-      #   MYSQL_ROOT_PASSWORD: root
-      #   MYSQL_DATABASE: mariadb
-      #   MYSQL_USER: orbiay
-      #   MYSQL_PASSWORD: root
-
   nginx:
       container_name: nginx
       build: ./requirements/nginx/ 
@@ -44,10 +38,6 @@ services:
                - wp_data:/var/www/wordpress
       depends_on:
           - wordpress
-# volumes:
-#    wp_data:
-#    base_data:
-
 volumes:
   wp_data:
     driver: local
